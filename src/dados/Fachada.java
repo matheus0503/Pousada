@@ -22,9 +22,7 @@ public class Fachada {
 			Fachada.instance = new Fachada();
 		}
 		
-		return Fachada.instance;
-		
-		
+		return Fachada.instance;	
 }
 	
 	
@@ -34,6 +32,10 @@ public class Fachada {
 	
 	public void listarNumQuartos() {
 		quartos.listarNumQuarto();
+	}
+	
+	public Funcionario procurarFunc (String cpfFunc) {
+		return funcs.procurarFunc(cpfFunc);
 	}
 	
 	
