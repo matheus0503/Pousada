@@ -39,20 +39,21 @@ public class TelaLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaLogin() {
+		setResizable(false);
 		setTitle("Tela de Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 228, 161);
+		setBounds(100, 100, 228, 238);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblDigiteSeuCpf = new JLabel("Digite Seu CPF:");
-		lblDigiteSeuCpf.setBounds(57, 22, 121, 14);
+		lblDigiteSeuCpf.setBounds(57, 109, 121, 14);
 		contentPane.add(lblDigiteSeuCpf);
 		
 		txtLoginCpfFunc = new JTextField();
-		txtLoginCpfFunc.setBounds(30, 47, 148, 20);
+		txtLoginCpfFunc.setBounds(30, 134, 148, 20);
 		contentPane.add(txtLoginCpfFunc);
 		txtLoginCpfFunc.setColumns(10);
 		
@@ -72,7 +73,11 @@ public class TelaLogin extends JFrame {
 				}
 			}
 		});
-		btnLogin.setBounds(57, 78, 89, 23);
+		btnLogin.setBounds(57, 165, 89, 23);
 		contentPane.add(btnLogin);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 11, 174, 87);
+		contentPane.add(panel);
 	}
 }
