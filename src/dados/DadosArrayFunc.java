@@ -74,11 +74,9 @@ public class DadosArrayFunc implements RepositorioFunc {
 		for (int i = 0; i < funcs.length; i++) {
 			if (funcs[i].getCpf() == cpfFunc) {
 				return funcs[i];
-
-			} else {
-				return null;
 			}
 		}
+		
 		return null;
 	}
 

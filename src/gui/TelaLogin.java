@@ -6,24 +6,18 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import dados.Fachada;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextField;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
 
 public class TelaLogin extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtLoginCpf;
-	private final Action action = new SwingAction();
+	private JTextField txtLoginCpfFunc;
 
 	/**
 	 * Launch the application.
@@ -45,45 +39,39 @@ public class TelaLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaLogin() {
-		setTitle("Login");
+		setTitle("Tela de Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 269, 148);
+		setBounds(100, 100, 228, 161);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblDigiteSeuCpf = new JLabel("Digite seu CPF:");
-		lblDigiteSeuCpf.setBounds(81, 11, 124, 14);
+		JLabel lblDigiteSeuCpf = new JLabel("Digite Seu CPF:");
+		lblDigiteSeuCpf.setBounds(57, 22, 121, 14);
 		contentPane.add(lblDigiteSeuCpf);
+		
+		txtLoginCpfFunc = new JTextField();
+		txtLoginCpfFunc.setBounds(30, 47, 148, 20);
+		contentPane.add(txtLoginCpfFunc);
+		txtLoginCpfFunc.setColumns(10);
 		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Função que verifica se o Funcionario do CPF digitado Existe
-				Fachada fachada = new Fachada();
-				if (fachada.procurarFunc(txtLoginCpf.getText()) == null) {
-					JOptionPane.showMessageDialog(null, "Funcionario Incorreto");
+				//Ação do Botão verifica se CPF Funcionario existe e entra no sistema
+				//Criar OBJ Fachada
+				Fachada fachada1 = new Fachada();
+				// Utiliza Funcção Buscar Func no ARRAY para verificar se CPF digitado existe na base de funcs.
+				if(fachada1.procurarFunc(txtLoginCpfFunc.getText()).getCpf() == null) {
+					JOptionPane.showMessageDialog(null, "Funcionario Inexistente!");
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Login Realizado com Sucesso");
 				}
 			}
 		});
-		btnLogin.setBounds(77, 67, 89, 23);
+		btnLogin.setBounds(57, 78, 89, 23);
 		contentPane.add(btnLogin);
-		
-		txtLoginCpf = new JTextField();
-		txtLoginCpf.setBounds(36, 36, 169, 20);
-		contentPane.add(txtLoginCpf);
-		txtLoginCpf.setColumns(10);
-	}
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
 	}
 }
