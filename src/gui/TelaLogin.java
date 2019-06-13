@@ -63,6 +63,7 @@ public class TelaLogin extends JFrame {
 				//Criar OBJ Fachada
 				Fachada fachada1 = new Fachada();
 				// Utiliza Funcção Buscar Func no ARRAY para verificar se CPF digitado existe na base de funcs.
+				//Comentario teste
 				if(fachada1.procurarFunc(txtLoginCpfFunc.getText()).getCpf() == null) {
 					JOptionPane.showMessageDialog(null, "Funcionario Inexistente!");
 				}
