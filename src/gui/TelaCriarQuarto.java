@@ -108,6 +108,16 @@ public class TelaCriarQuarto extends JFrame {
 				fachada.criarQuarto(q1);
 				JOptionPane.showMessageDialog(null, "Quarto "+txtNumQuarto.getText() +" Criado Com Sucesso!");
 				
+				//Retorna para Tela de Menu
+				
+				
+					TelaMenu irMenu = new TelaMenu();
+					irMenu = new TelaMenu();
+					irMenu.setLocationRelativeTo(null);
+					irMenu.setVisible(true);
+					irMenu.setResizable(false);
+				
+				
 				
 				
 			}
