@@ -17,12 +17,16 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.SystemColor;
+import javax.swing.JFormattedTextField;
+import javax.swing.DropMode;
+import javax.swing.SwingConstants;
+import javax.swing.JPasswordField;
 
 public class TelaLogin extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtLoginCpfFunc;
 	private TelaMenu irMenu = new TelaMenu();
+	private JPasswordField txtPasswordLogin;
 
 
 	/**
@@ -59,11 +63,6 @@ public class TelaLogin extends JFrame {
 		lblDigiteSeuCpf.setBounds(20, 99, 100, 14);
 		contentPane.add(lblDigiteSeuCpf);
 		
-		txtLoginCpfFunc = new JTextField();
-		txtLoginCpfFunc.setBounds(130, 96, 169, 20);
-		contentPane.add(txtLoginCpfFunc);
-		txtLoginCpfFunc.setColumns(10);
-		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -72,12 +71,13 @@ public class TelaLogin extends JFrame {
 				Fachada fachada1 = new Fachada();
 				// Utiliza Funcção Buscar Func no ARRAY para verificar se CPF digitado existe na base de funcs.
 				//Comentario teste
-				if(txtLoginCpfFunc.getText().equals("12345678900")) {
+				if(txtPasswordLogin.getText().equals("12345678900")) {
 					JOptionPane.showMessageDialog(null, "Login Realizado com Sucesso");
 					irMenu = new TelaMenu();
 					irMenu.setLocationRelativeTo(null);
 					irMenu.setVisible(true);
 					irMenu.setResizable(false);
+					
 					
 					
 				}
@@ -93,5 +93,9 @@ public class TelaLogin extends JFrame {
 		label.setIcon(new ImageIcon(TelaLogin.class.getResource("/Image/PousadaProgT2.png")));
 		label.setBounds(10, 11, 300, 77);
 		contentPane.add(label);
+		
+		txtPasswordLogin = new JPasswordField();
+		txtPasswordLogin.setBounds(128, 96, 171, 20);
+		contentPane.add(txtPasswordLogin);
 	}
 }
