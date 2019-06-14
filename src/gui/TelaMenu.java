@@ -13,6 +13,7 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JDesktopPane;
 
 public class TelaMenu extends JFrame {
 
@@ -58,6 +59,7 @@ public class TelaMenu extends JFrame {
 		JButton btnNewButton = new JButton("Sair");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
 			}
 		});
 		btnNewButton.setBounds(332, 205, 73, 23);
@@ -68,6 +70,15 @@ public class TelaMenu extends JFrame {
 		contentPane.add(btnCriarFuncionrio);
 		
 		JButton btnCriarQuarto = new JButton("Quarto");
+		btnCriarQuarto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaCriarQuarto novoQuarto = new TelaCriarQuarto ();
+				novoQuarto = new TelaCriarQuarto();
+				novoQuarto.setLocationRelativeTo(null);
+				novoQuarto.setVisible(true);
+				novoQuarto.setResizable(false);
+			}
+		});
 		btnCriarQuarto.setBounds(51, 171, 123, 23);
 		contentPane.add(btnCriarQuarto);
 		
