@@ -9,8 +9,6 @@ public interface RepositorioQuarto {
 	public void removerQuarto(String numQuarto);
 	public void atualizarStatus(Quarto q, boolean status);
 	public Quarto procurar(String numQuarto);
-	public Quarto[] listar();
-	public String listarNumQuarto();
-	public int tamanhoVetQuartos ();	
+	public Quarto[] listar();	
 	public String listarNumQuarto (int posicao);
 }
