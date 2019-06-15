@@ -69,16 +69,5 @@ public class DadosArray implements RepositorioQuarto {
 			return quartos[posicao].getNumQuarto();
 	}
 
-	@Override
-	public String listarNumQuarto() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int tamanhoVetQuartos() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 }
