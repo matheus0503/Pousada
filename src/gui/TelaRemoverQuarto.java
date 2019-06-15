@@ -4,6 +4,10 @@ import java.awt.EventQueue;
 
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+
+import business.Quarto;
+import dados.Fachada;
+
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.SystemColor;
@@ -15,6 +19,10 @@ public class TelaRemoverQuarto extends JInternalFrame {
 	/**
 	 * Launch the application.
 	 */
+	
+	
+	private Quarto[] quartos = new Quarto[200];
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -32,6 +40,7 @@ public class TelaRemoverQuarto extends JInternalFrame {
 	 * Create the frame.
 	 */
 	public TelaRemoverQuarto() {
+		
 		setClosable(true);
 		setTitle("Remover Quarto");
 		setBounds(100, 100, 200, 161);
@@ -41,9 +50,19 @@ public class TelaRemoverQuarto extends JInternalFrame {
 		lblNumeroDoQuarto.setBounds(10, 11, 120, 14);
 		getContentPane().add(lblNumeroDoQuarto);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(10, 40, 149, 22);
-		getContentPane().add(comboBox);
+		JComboBox<Quarto> cbQuartos = new JComboBox<Quarto>();
+		cbQuartos.setBounds(10, 40, 149, 22);
+		getContentPane().add(cbQuartos);
+		
+		Fachada fachada = new Fachada();
+		
+		cbQuartos.removeAll();
+		quartos = fachada.listar();
+		
+		for (int i = 0; i < quartos.length; i++) {
+			cbQuartos.addItem(quartos[i]);
+		}
+		
 		
 		JButton btnRemover = new JButton("Remover");
 		btnRemover.setBackground(new Color(128, 0, 0));

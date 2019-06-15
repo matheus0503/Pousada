@@ -30,12 +30,16 @@ public class Fachada {
 		quartos.criarQuarto(q);
 	}
 	
-	public void listarNumQuartos() {
-		quartos.listarNumQuarto();
+	public String listarNumQuartos(int posicao) {
+		return quartos.listarNumQuarto(posicao);
 	}
 	
 	public Funcionario procurarFunc (String cpfFunc) {
 		return funcs.procurarFunc(cpfFunc);
+	}
+	
+	public Quarto[] listar() {
+		return quartos.listar();
 	}
 	
 	

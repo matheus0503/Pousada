@@ -12,7 +12,7 @@ public class ControleQuarto {
 			quartos.criarQuarto(q);
 	}
 	
-	public void removerQuarto(int numQuarto) {
+	public void removerQuarto(String numQuarto) {
 		quartos.removerQuarto(numQuarto);
 	}
 	
@@ -20,8 +20,12 @@ public class ControleQuarto {
 		
 	}
 	
-	public int listarNumQuarto() {
-		return quartos.listarNumQuarto();
+	public String listarNumQuarto (int posicao) {
+			return quartos.listarNumQuarto(posicao);
+	}
+	
+	public Quarto[] listar() {
+		return quartos.listar();
 	}
 	
 

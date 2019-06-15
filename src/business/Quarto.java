@@ -2,12 +2,12 @@ package business;
 
 public class Quarto {
 
-	private int numQuarto;
+	private String numQuarto;
 	private int capacidade;
 	private boolean banheiro;
 	private boolean status;
 	
-	public Quarto(int numQuarto, int capacidade, boolean banheiro, boolean status) {
+	public Quarto(String numQuarto, int capacidade, boolean banheiro, boolean status) {
 		super();
 		this.numQuarto = numQuarto;
 		this.capacidade = capacidade;
@@ -20,11 +20,11 @@ public class Quarto {
 		
 	}
 
-	public int getNumQuarto() {
+	public String getNumQuarto() {
 		return numQuarto;
 	}
 
-	public void setNumQuarto(int numQuarto) {
+	public void setNumQuarto(String numQuarto) {
 		this.numQuarto = numQuarto;
 	}
 

@@ -24,7 +24,7 @@ public class DadosArray implements RepositorioQuarto {
 	}
 
 	@Override
-	public void removerQuarto(int numQuarto) {
+	public void removerQuarto(String numQuarto) {
 		for (int i = 0; i < quartos.length; i++) {
 			if (quartos[i].getNumQuarto() == numQuarto) {
 				quartos[i] = null;
@@ -46,7 +46,7 @@ public class DadosArray implements RepositorioQuarto {
 	}
 
 	@Override
-	public Quarto procurar(int numQuarto) {
+	public Quarto procurar(String numQuarto) {
 		Quarto a = new Quarto();
 		for (int i = 0; i < quartos.length; i++) {
 			if (quartos[i].getNumQuarto() == numQuarto) {
@@ -61,15 +61,23 @@ public class DadosArray implements RepositorioQuarto {
 
 	@Override
 	public Quarto[] listar() {
-		
 		return quartos;
 	}
 	
-	public int listarNumQuarto () {
-		
-		for (int i = 0; i < quartos.length; i++) {
-			return quartos[i].getNumQuarto();
-		}
+	
+	public String listarNumQuarto (int posicao) {
+			return quartos[posicao].getNumQuarto();
+	}
+
+	@Override
+	public String listarNumQuarto() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int tamanhoVetQuartos() {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 

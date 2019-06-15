@@ -6,9 +6,11 @@ import dados.DadosArray;
 public interface RepositorioQuarto {
 
 	public void criarQuarto(Quarto q);
-	public void removerQuarto(int numQuarto);
+	public void removerQuarto(String numQuarto);
 	public void atualizarStatus(Quarto q, boolean status);
-	public Quarto procurar(int numQuarto);
+	public Quarto procurar(String numQuarto);
 	public Quarto[] listar();
-	public int listarNumQuarto();
+	public String listarNumQuarto();
+	public int tamanhoVetQuartos ();	
+	public String listarNumQuarto (int posicao);
 }
