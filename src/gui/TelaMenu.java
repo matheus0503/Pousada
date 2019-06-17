@@ -103,6 +103,14 @@ public class TelaMenu extends JFrame {
 		menuBar.add(menu);
 		
 		JMenuItem menuItem = new JMenuItem("Criar");
+		menuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaNovoCliente criarCliente = new TelaNovoCliente();
+				criarCliente = new TelaNovoCliente();
+				criarCliente.setVisible(true);
+				desktopPane.add(criarCliente);
+			}
+		});
 		menu.add(menuItem);
 		
 		JMenuItem menuItem_1 = new JMenuItem("Editar");
