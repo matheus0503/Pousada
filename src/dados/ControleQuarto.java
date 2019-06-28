@@ -11,7 +11,7 @@ public class ControleQuarto {
 	
 	public void criarQuarto(Quarto q) {
 		//regras de neggocio
-		if (q.getNumQuarto() != null && q.getCapacidade() != 0 && q.getNumQuarto() == "") {
+		if (q.getNumQuarto() != null && q.getCapacidade() != 0) {
 			quartos.criarQuarto(q);
 			JOptionPane.showMessageDialog(null, "Quarto "+q.getNumQuarto() +" Criado Com Sucesso!");
 		}

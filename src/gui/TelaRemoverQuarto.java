@@ -50,7 +50,7 @@ public class TelaRemoverQuarto extends JInternalFrame {
 		lblNumeroDoQuarto.setBounds(10, 11, 120, 14);
 		getContentPane().add(lblNumeroDoQuarto);
 		
-		JComboBox<Quarto> cbQuartos = new JComboBox<Quarto>();
+		JComboBox<String> cbQuartos = new JComboBox<String>();
 		cbQuartos.setBounds(10, 40, 149, 22);
 		getContentPane().add(cbQuartos);
 		
@@ -60,8 +60,9 @@ public class TelaRemoverQuarto extends JInternalFrame {
 		quartos = fachada.listar();
 		
 		for (int i = 0; i < quartos.length; i++) {
-			cbQuartos.addItem(quartos[i]);
+			cbQuartos.addItem(quartos[i].getNumQuarto());
 		}
+		
 		
 		
 		JButton btnRemover = new JButton("Remover");
