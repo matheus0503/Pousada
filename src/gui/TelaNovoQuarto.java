@@ -96,7 +96,7 @@ public class TelaNovoQuarto extends JInternalFrame {
 				
 				Fachada fachada = new Fachada();
 				fachada.criarQuarto(q1);
-				JOptionPane.showMessageDialog(null, "Quarto "+q1.getNumQuarto() +" Criado Com Sucesso!");
+				
 			}
 		});
 		btnCriar.setBounds(84, 111, 89, 23);

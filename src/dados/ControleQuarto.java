@@ -1,5 +1,7 @@
 package dados;
 
+import javax.swing.JOptionPane;
+
 import business.Quarto;
 import interfaces.RepositorioQuarto;
 
@@ -9,7 +11,14 @@ public class ControleQuarto {
 	
 	public void criarQuarto(Quarto q) {
 		//regras de neggocio
+		if (q.getNumQuarto() != null && q.getCapacidade() != 0 && q.getNumQuarto() == "") {
 			quartos.criarQuarto(q);
+			JOptionPane.showMessageDialog(null, "Quarto "+q.getNumQuarto() +" Criado Com Sucesso!");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Dados Inválidos !");
+		}
+			
 	}
 	
 	public void removerQuarto(String numQuarto) {
